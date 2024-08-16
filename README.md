@@ -12,4 +12,7 @@ Tengo una notebook en la que la tecla `BloqNum` queda presionada de manera conti
 
 - **Bloqueo de la tecla `BloqNum`:** El script intercepta las pulsaciones de la tecla `BloqNum` y, si está desactivada, revertirá su estado inmediatamente, haciendo que la tecla no tenga efecto en el sistema.
 - **Interfaz gráfica:** Se incluye una simple interfaz gráfica creada con `tkinter` que permite habilitar o deshabilitar la tecla `BloqNum` de manera sencilla.
+## Proximamente
 - **Ejecución en segundo plano:** El script se ejecuta en segundo plano y monitorea las pulsaciones de la tecla en todo momento.
+- **Seleccion de tecla en la interfaz grafica**
+- 
