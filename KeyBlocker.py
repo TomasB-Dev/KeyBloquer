@@ -34,7 +34,7 @@ def minimize_to_tray():
     root.withdraw()  # oculto la ventna
     icon.run()
 
-def show_window(icon, item):
+def show_window(icon):
     icon.stop()
     root.after(0, root.deiconify)  # muestro la ventana
     icon.stop()
@@ -64,11 +64,11 @@ root.config(bg="#272623")
 etiqueta_tecla = tk.Label(root, text="TECLA SELECCIONADA: Ninguna", font=("Arial", 14))
 etiqueta_tecla.grid(row=0, column=0, columnspan=14, pady=10)
 teclas = [
-    'Esc', 'F1', 'F2', 'F3', 'F4', 'F5', 'F6','F7','F8','F9','F10','F11','F12', 'num lock',
+    'Escape', 'F1', 'F2', 'F3', 'F4', 'F5', 'F6','F7','F8','F9','F10','F11','F12', 'num lock',
     '|','1','2','3','4','5','6','7','8','9','0',"'",'¿','delete','tab','q','w','e','r','t',
     'y','u','i','o','p','´','+','enter','caps lock','a','s','d','f','g','h','j','k','l','ñ','{','}',
-    'shift','<','z','x','c','v','b','n','m',',','.','-','shif left','ctrl','win','alt','space bar','alt gr',
-    'fn'
+    'shift','<','z','x','c','v','b','n','m',',','.','-','shif left','ctrl','command','alt','spacebar','alt gr','Function',
+    'Insert','print screen',
 
 
 ]
