@@ -1,17 +1,23 @@
 import keyboard
 import tkinter as tk
+from pystray import Icon, MenuItem as item, Menu
+from PIL import Image, ImageDraw
 #Estado de la key presionada
 Estado_de_key = False
 tecla_a_bloquear = None
 
-def Bloquear_Key():
+def Desbloquear_Key():
     global Estado_de_key
     Estado_de_key = True
 
 
-def Desbloquear_Key():
+def Bloquear_Key():
     global Estado_de_key
     Estado_de_key = False
+
+def quit_app(icon):
+    icon.stop()  # Detener el icono de la bandeja
+    root.quit()
 
 #funcion que se ejecute al presion la tecla seleccionada
 def Tecla_Pulsada(event):
@@ -24,13 +30,34 @@ def seleccionar_tecla(tecla):
     global tecla_a_bloquear
     tecla_a_bloquear = tecla
     etiqueta_tecla.config(text=f"TECLA SELECCIONADA: {tecla}")
+def minimize_to_tray():
+    root.withdraw()  # oculto la ventna
+    icon.run()
 
+def show_window(icon, item):
+    icon.stop()
+    root.after(0, root.deiconify)  # muestro la ventana
+    icon.stop()
+    root.quit()
+def create_tray_icon():
+    #icono de la bandeja
+    image = Image.new('RGB', (20, 20), color=(21, 114, 226))
+    d = ImageDraw.Draw(image)
+    d.text((5, 5), "KB", fill=(255, 255, 0))
 
+    menu = Menu(
+        item('Mostrar', show_window),
+        item('Salir', quit_app)
+    )
+    
+    return Icon("KeyBlocker", image, "KeyBlocker", menu)
 #capta los eventos del teclado
 keyboard.hook(Tecla_Pulsada)
 root = tk.Tk()
 root.title("KeyBlocker")
 root.config(bg="#272623")
+
+
 
 
 
@@ -60,5 +87,7 @@ boton_bloquear.grid(row=1, column=0, columnspan=7, pady=20, sticky="we")
 
 boton_desbloquear = tk.Button(root, text="Desbloquear tecla", command=Desbloquear_Key, bg="green")  
 boton_desbloquear.grid(row=1, column=7, columnspan=7, pady=10, sticky="we")
+icon = create_tray_icon()
+root.protocol("WM_DELETE_WINDOW", minimize_to_tray)
 
 root.mainloop()
