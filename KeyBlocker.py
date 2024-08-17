@@ -16,7 +16,7 @@ def Bloquear_Key():
     Estado_de_key = False
 
 def quit_app(icon):
-    icon.stop()  # Detener el icono de la bandeja
+    icon.stop()  # Detener el icono 
     root.quit()
 
 #funcion que se ejecute al presion la tecla seleccionada
@@ -40,7 +40,7 @@ def show_window(icon):
     icon.stop()
     root.quit()
 def create_tray_icon():
-    #icono de la bandeja
+    #icono de secondplane
     image = Image.new('RGB', (20, 20), color=(21, 114, 226))
     d = ImageDraw.Draw(image)
     d.text((4,4), "KB", fill=(249, 249, 249))
