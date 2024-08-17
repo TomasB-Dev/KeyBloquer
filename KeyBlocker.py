@@ -43,7 +43,7 @@ def create_tray_icon():
     #icono de la bandeja
     image = Image.new('RGB', (20, 20), color=(21, 114, 226))
     d = ImageDraw.Draw(image)
-    d.text((5, 5), "KB", fill=(255, 255, 0))
+    d.text((4,4), "KB", fill=(249, 249, 249))
 
     menu = Menu(
         item('Mostrar', show_window),
