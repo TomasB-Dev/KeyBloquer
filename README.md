@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Este proyecto consiste en un script en Python que desactiva la tecla `BloqNum` en tu teclado, con el objetivo de resolver un problema común en teclados de notebooks donde la tecla `BloqNum` queda atascada y actúa como si estuviera constantemente presionada. Este comportamiento puede causar varios problemas al escribir, ya que afecta la función de los teclados numéricos y otras teclas.
+Este proyecto consiste en un script en Python que desactiva la tecla `seleccionada` en tu teclado, con el objetivo de resolver un problema común en teclados de notebooks donde la tecla `seleccionada` queda atascada y actúa como si estuviera constantemente presionada. Este comportamiento puede causar varios problemas al escribir, ya que afecta la función de los teclados numéricos y otras teclas.
 
 ## ¿Por qué estoy haciendo esto?
 
@@ -10,8 +10,8 @@ Tengo una notebook en la que la tecla `BloqNum` queda presionada de manera conti
 
 ## Características
 
-- **Bloqueo de la tecla `BloqNum`:** El script intercepta las pulsaciones de la tecla `BloqNum` y, si está desactivada, revertirá su estado inmediatamente, haciendo que la tecla no tenga efecto en el sistema.
-- **Interfaz gráfica:** Se incluye una simple interfaz gráfica creada con `tkinter` que permite habilitar o deshabilitar la tecla `BloqNum` de manera sencilla.
+- **Bloqueo de la tecla `Seleccionada`:** El script intercepta las pulsaciones de la tecla `Seleccionada` y, si está desactivada, revertirá su estado inmediatamente, haciendo que la tecla no tenga efecto en el sistema.
+- **Interfaz gráfica:** Se incluye una simple interfaz gráfica creada con `tkinter` que permite habilitar o deshabilitar la tecla `Seleccionada` de manera sencilla.
 - **Ejecución en segundo plano:** El script se ejecuta en segundo plano y monitorea las pulsaciones de la tecla en todo momento.
 - **Seleccion de tecla en la interfaz grafica**
 - 
