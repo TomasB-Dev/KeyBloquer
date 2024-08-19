@@ -1,5 +1,6 @@
 import keyboard
 import tkinter as tk
+from tkinter import messagebox as MessageBox
 from pystray import Icon, MenuItem as item, Menu
 from PIL import Image, ImageDraw
 #Estado de la key presionada
@@ -7,13 +8,23 @@ Estado_de_key = False
 tecla_a_bloquear = None
 
 def Desbloquear_Key():
-    global Estado_de_key
-    Estado_de_key = True
+    global Estado_de_key  
+    if (tecla_a_bloquear != None):
+        Estado_de_key = True
+        keyboard.unblock_key(tecla_a_bloquear)
+    else:
+        MessageBox.showinfo("ERROR", "No selecciono una tecla para bloquear")
 
 
 def Bloquear_Key():
-    global Estado_de_key
-    Estado_de_key = False
+    global Estado_de_key   
+    if (tecla_a_bloquear != None):
+        Estado_de_key = False
+        keyboard.press(tecla_a_bloquear)    
+        keyboard.block_key(tecla_a_bloquear)
+        keyboard.release(tecla_a_bloquear)
+    else:
+        MessageBox.showinfo("ERROR", "No selecciono una tecla para bloquear")
 
 def quit_app(icon):
     icon.stop()  # Detener el icono 
@@ -40,7 +51,7 @@ def show_window(icon):
     icon.stop()
     root.quit()
 def create_tray_icon():
-    #icono de secondplane
+    #icono del second plane
     image = Image.new('RGB', (20, 20), color=(21, 114, 226))
     d = ImageDraw.Draw(image)
     d.text((4,4), "KB", fill=(249, 249, 249))
@@ -61,7 +72,7 @@ root.config(bg="#272623")
 
 
 
-etiqueta_tecla = tk.Label(root, text="TECLA SELECCIONADA: Ninguna", font=("Arial", 14))
+etiqueta_tecla = tk.Label(root, text="TECLA SELECCIONADA: NINGUNA", font=("Arial", 14))
 etiqueta_tecla.grid(row=0, column=0, columnspan=14, pady=10)
 teclas = [
     'Escape', 'F1', 'F2', 'F3', 'F4', 'F5', 'F6','F7','F8','F9','F10','F11','F12', 'num lock',
