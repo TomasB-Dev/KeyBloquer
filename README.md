@@ -14,6 +14,8 @@ Tengo una notebook en la que la tecla `BloqNum` queda presionada de manera conti
 - **Interfaz gráfica:** Se incluye una simple interfaz gráfica creada con `tkinter` que permite habilitar o deshabilitar la tecla `Seleccionada` de manera sencilla.
 ## Descargar
 Para descargar hace click en: [DESCARGAR](https://github.com/TomasB-Dev/KeyBloquer/releases/download/Keyblocker.V0.0.1/KeyBlocker.rar)
+>[!WARNING]
+>El uso en Linux es totalmente experimental.
 ## ¿Como lo uso?
 
 - **1** Descomprimimos `Keyblocker.rar`.
@@ -39,8 +41,7 @@ Para descargar hace click en: [DESCARGAR](https://github.com/TomasB-Dev/KeyBloqu
   
     ![image](https://github.com/user-attachments/assets/57864364-e416-45e6-9ec1-4684d89cfcfe)
   
->[!WARNING]
->El uso en linux es totalmente experimental.
+
 
 
 
