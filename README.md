@@ -38,6 +38,9 @@ Para descargar hace click en: [DESCARGAR](https://github.com/TomasB-Dev/KeyBloqu
 - **9** Si deseamos volver abrir la interfaz grafica o cerrar el programa hacemos click derecho sobre el icono y se nos va a desplegar un menu con dos opciones.
   
     ![image](https://github.com/user-attachments/assets/57864364-e416-45e6-9ec1-4684d89cfcfe)
+  
+>[!WARNING]
+>El uso en linux es totalmente experimental.
 
 
 
