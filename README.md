@@ -12,7 +12,7 @@ Tengo una notebook en la que la tecla `BloqNum` queda presionada de manera conti
 
 - **Bloqueo de la tecla `Seleccionada`:** El script intercepta las pulsaciones de la tecla `Seleccionada` y, si está desactivada, revertirá su estado inmediatamente, haciendo que la tecla no tenga efecto en el sistema.
 - **Interfaz gráfica:** Se incluye una simple interfaz gráfica creada con `tkinter` que permite habilitar o deshabilitar la tecla `Seleccionada` de manera sencilla.
-
+## Descargar
 Para descargar hace click en: [DESCARGAR](https://github.com/TomasB-Dev/KeyBloquer/releases/download/Keyblocker.V0.0.1/KeyBlocker.rar)
 ## ¿Como lo uso?
 
