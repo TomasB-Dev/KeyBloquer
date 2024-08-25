@@ -3,9 +3,11 @@ import tkinter as tk
 from tkinter import messagebox as MessageBox
 from pystray import Icon, MenuItem as item, Menu
 from PIL import Image, ImageDraw
+import os
 #Estado de la key presionada
 Estado_de_key = False
 tecla_a_bloquear = None
+
 
 
 def Desbloquear_Key():
@@ -30,9 +32,7 @@ def Bloquear_Key():
     else:
         MessageBox.showerror("ERROR", "No selecciono una tecla para bloquear")
 
-def quit_app(icon):
-    icon.stop()  # Detener el icono 
-    root.quit()
+
 
 #funcion que se ejecute al presion la tecla seleccionada
 def Tecla_Pulsada(event):
@@ -49,15 +49,20 @@ def seleccionar_tecla(tecla):
     actualizar_botones()
 
 
+#Funcionamiento en segundo plano:
+
+
 def minimize_to_tray():
     root.withdraw()  # oculto la ventna
     icon.run()
+def quit_app(icon):
+    icon.stop()  # Detener el icono 
+    root.quit()
 
 def show_window(icon):
     icon.stop()
     root.after(0, root.deiconify)  # muestro la ventana
-    icon.stop()
-    root.quit()
+    # icon.stop()
 def create_tray_icon():
     #icono del second plane
     image = Image.new('RGB', (20, 20), color=(21, 114, 226))
@@ -105,10 +110,14 @@ for tecla in teclas:
     row = (Cantidad_De_Teclas // 14) + 1  
     column = Cantidad_De_Teclas % 14 
     bck = "ORANGE" if tecla == tecla_a_bloquear else "GREY"
-    boton = tk.Button(root, text=f"{tecla.upper()}", command=lambda t=tecla: seleccionar_tecla(t), bg=bck)
-    boton.grid(row=row + 1, column=column, padx=3, pady=5)
+    
+    boton = tk.Button(root, text=f"{tecla.upper()}", command=lambda t=tecla: seleccionar_tecla(t), bg=bck, width=14, height=2)
+    boton.grid(row=row + 1, column=column, padx=3, pady=4, sticky="nsew")
+    
     botones[tecla] = boton  
     Cantidad_De_Teclas += 1
+for i in range(14):#acomodar las columnas cuando expando
+    root.grid_columnconfigure(i, weight=15)
 
 
 boton_bloquear = tk.Button(root, text="Bloquear tecla", command=Bloquear_Key, bg="red")  
